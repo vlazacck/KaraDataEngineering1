@@ -1,0 +1,6 @@
+script/images
+myvenv/script/images
+myvenv/
+!myvenv/scripts/
+!myvenv/notebooks/
+!myvenv/models/
