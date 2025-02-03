@@ -1,0 +1,10 @@
+2025-02-03 23:59:40,573 - INFO - Connected to the database successfully.
+2025-02-03 23:59:40,596 - INFO - Query executed: SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+2025-02-03 23:59:40,597 - INFO - Tables listed successfully.
+2025-02-03 23:59:40,600 - INFO - Query executed: Composed([SQL('CREATE TABLE IF NOT EXISTS '), Identifier('object_detections'), SQL(' ('), Composed([SQL('id SERIAL PRIMARY KEY'), SQL(', '), SQL('file_name TEXT NOT NULL'), SQL(', '), SQL('class_id INTEGER NOT NULL'), SQL(', '), SQL('x_center FLOAT NOT NULL'), SQL(', '), SQL('y_center FLOAT NOT NULL'), SQL(', '), SQL('width FLOAT NOT NULL'), SQL(', '), SQL('height FLOAT NOT NULL'), SQL(', '), SQL('confidence FLOAT'), SQL(', '), SQL('timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP')]), SQL(');')])
+2025-02-03 23:59:40,601 - INFO - Table 'object_detections' created successfully.
+2025-02-03 23:59:40,609 - INFO - Query executed: Composed([SQL('INSERT INTO '), Identifier('object_detections'), SQL(' ('), Composed([Identifier('file_name'), SQL(', '), Identifier('class_id'), SQL(', '), Identifier('x_center'), SQL(', '), Identifier('y_center'), SQL(', '), Identifier('width'), SQL(', '), Identifier('height'), SQL(', '), Identifier('confidence')]), SQL(') VALUES ('), SQL('%s, %s, %s, %s, %s, %s, %s'), SQL(');')])
+2025-02-03 23:59:40,611 - INFO - Query executed: Composed([SQL('INSERT INTO '), Identifier('object_detections'), SQL(' ('), Composed([Identifier('file_name'), SQL(', '), Identifier('class_id'), SQL(', '), Identifier('x_center'), SQL(', '), Identifier('y_center'), SQL(', '), Identifier('width'), SQL(', '), Identifier('height'), SQL(', '), Identifier('confidence')]), SQL(') VALUES ('), SQL('%s, %s, %s, %s, %s, %s, %s'), SQL(');')])
+2025-02-03 23:59:40,612 - INFO - Transaction committed.
+2025-02-03 23:59:40,612 - INFO - Data inserted into table 'object_detections' successfully.
+2025-02-03 23:59:40,613 - INFO - Database connection closed.

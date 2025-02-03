@@ -14,18 +14,10 @@ if os.path.exists(detect_script_path):
 else:
     raise FileNotFoundError(f"Could not find {detect_script_path}")
 
-# Use the detect function
-detect(
-    weights="yolov5s.pt",
-    source="dataImages/images",
-    project="detections",
-    name="results",
-    exist_ok=True
-)
 # Define paths
-IMAGE_DIR = "yolov5/dataImages/images"  # Updated to point to the combined images folder
-OUTPUT_DIR = "yolov5/detections"
-Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+IMAGE_DIR = "C:/Users/Hp/Videos/karaDataEngineering1/yolov5/dataImage/images"  # Corrected path
+OUTPUT_DIR = "C:/Users/Hp/Videos/karaDataEngineering1/yolov5/detections/results"  # Output folder
+Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)  # Create output folder if it doesn't exist
 
 # Detect objects in images
 def run_yolo_detection(image_dir, output_dir):
@@ -33,12 +25,14 @@ def run_yolo_detection(image_dir, output_dir):
     Runs YOLOv5 object detection on images in the specified directory.
     """
     # Call the YOLOv5 detection script
-    detect.run(
-        weights="yolov5s.pt",  # Pre-trained weights
-        source=image_dir,
-        project=output_dir,
-        name="results",
-        exist_ok=True
+    detect(
+         weights="yolov5s.pt",  # Pre-trained weights
+        source=str(image_dir),  # Path to the folder containing images
+        project=str(output_dir),  # Output folder for detection results
+        name="results",  
+        save_txt=True,  # Save results as .txt files
+        exist_ok=True,  # Overwrite existing results
+        save_conf=True  # Include confidence scores in .txt files
     )
 
 # Example usage
