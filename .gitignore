@@ -1,7 +1,5 @@
 script/images
 script/.env
 myvenv/script/images
-myvenv/
-!myvenv/scripts/
-!myvenv/notebooks/
-!myvenv/models/
+
+!myvenv/script/
